@@ -1,0 +1,15 @@
+{
+  "name": "node.js-practice",
+  "version": "1.0.0",
+  "description": "A recipe booking app, Just to practice node/express",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Besingi Marinus",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}

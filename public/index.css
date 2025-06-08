@@ -1,0 +1,124 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'open sans', sans-serif;
+  color: #ffffff;
+}
+
+.container {
+  min-height: 100vh;
+  background-image: linear-gradient(#00000060, #00000067),
+    url('images/overview\ bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  padding: 2rem 10rem;
+}
+h1 {
+  font-size: 3.5rem;
+  text-align: center;
+  color: white;
+  text-transform: capitalize;
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-transform: capitalize;
+}
+
+.description {
+  font-size: 1.6rem;
+  color: white;
+  padding: 0.5rem 21%;
+  text-align: center;
+}
+
+.row {
+  margin-top: 15rem;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  position: relative;
+  border: 1px solid yellow;
+  height: 30rem;
+  flex: 49%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.card_details {
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.card_details-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  text-align: center;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #e85a58;
+  margin: 1rem 0;
+}
+
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  border-radius: 5rem;
+  padding: 0.6rem 1.5rem;
+  transition: all 0.3s;
+}
+
+.btns-container {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.btn-red {
+  background-color: #e52e2d;
+  border: 2px solid transparent;
+
+  &:hover {
+    background-color: transparent;
+    border: 2px solid #e52e2d;
+  }
+}
+
+.btn-border {
+  border: 2px solid #e52e2d;
+
+  &:hover {
+    background-color: #e52e2d;
+    border: 2px solid transparent;
+  }
+}
