@@ -40,27 +40,20 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
-app.use(express.static(path.join(__dirname, 'public')));
-// app.use(express.static('./templates'));
+const productsData = fs.readFileSync(`${__dirname}/data/data.json`, 'utf-8');
 
-// const tempIndex = fs.readFileSync(`${__dirname}/templates/index.html`, "utf-8");
-// const tempProduct = fs.readFileSync(
-//   `${__dirname}/templates/product.html`,
-//   "utf-8"
-// );
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res, next) => {
-  fs.readFile(`${__dirname}/data/data.json`, (err, data) => {
-    if (err) return console.log('Could not get products');
-
-    const products = JSON.parse(data);
-    // console.log(products);
-    res.render(`index`, { products });
-  });
+  const products = JSON.parse(productsData);
+  res.render(`index`, { products });
 });
 
-app.get('/product', (req, res) => {
-  res.status(200).send(tempProduct);
+app.get('/product/:id', (req, res) => {
+  const { id } = req.params;
+  const products = JSON.parse(productsData);
+  const product = products.find((p) => p.id === id);
+  res.render('product', { product });
 });
 
 app.get('/cart', (req, res) => {

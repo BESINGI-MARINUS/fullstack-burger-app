@@ -3,42 +3,42 @@
     "name": "Double burger",
     "price": "8.50",
     "id": "0",
-    "image": "../images/burger-1.jpg",
+    "image": "/images/burger-1.jpg",
     "description": "Id faucibus nisl tincidunt eget nullam non nisi. Amet dictum sit amet justo donec enim diam vulputate ut. Non quam lacus suspendisse faucibus interdum. Ac ut consequat semper viverra nam. Auctor augue mauris augue neque gravida in fermentum et."
   },
   {
     "name": "Farm house",
     "price": "7.50",
     "id": "1",
-    "image": "../images/burger-2.jpg",
+    "image": "/images/burger-2.jpg",
     "description": "Id faucibus nisl tincidunt eget nullam non nisi. Amet dictum sit amet justo donec enim diam vulputate ut. Non quam lacus suspendisse faucibus interdum. Ac ut consequat semper viverra nam. Auctor augue mauris augue neque gravida in fermentum et."
   },
   {
     "name": "bacon burger",
     "price": "8.00",
     "id": "2",
-    "image": "../images/burger-3.jpg",
+    "image": "/images/burger-3.jpg",
     "description": "Id faucibus nisl tincidunt eget nullam non nisi. Amet dictum sit amet justo donec enim diam vulputate ut. Non quam lacus suspendisse faucibus interdum. Ac ut consequat semper viverra nam. Auctor augue mauris augue neque gravida in fermentum et."
   },
   {
     "name": "special offer",
     "price": "15.00",
     "id": "3",
-    "image": "../images/burger-4.jpg",
+    "image": "/images/burger-4.jpg",
     "description": "Id faucibus nisl tincidunt eget nullam non nisi. Amet dictum sit amet justo donec enim diam vulputate ut. Non quam lacus suspendisse faucibus interdum. Ac ut consequat semper viverra nam. Auctor augue mauris augue neque gravida in fermentum et."
   },
   {
     "name": "black burger",
     "price": "11.00",
     "id": "4",
-    "image": "../images/burger-5.jpg",
+    "image": "/images/burger-5.jpg",
     "description": "Id faucibus nisl tincidunt eget nullam non nisi. Amet dictum sit amet justo donec enim diam vulputate ut. Non quam lacus suspendisse faucibus interdum. Ac ut consequat semper viverra nam. Auctor augue mauris augue neque gravida in fermentum et."
   },
   {
     "name": "king burger",
     "price": "11.00",
     "id": "5",
-    "image": "../images/burger-6.jpg",
+    "image": "/images/burger-6.jpg",
     "description": "Id faucibus nisl tincidunt eget nullam non nisi. Amet dictum sit amet justo donec enim diam vulputate ut. Non quam lacus suspendisse faucibus interdum. Ac ut consequat semper viverra nam. Auctor augue mauris augue neque gravida in fermentum et."
   }
 ]

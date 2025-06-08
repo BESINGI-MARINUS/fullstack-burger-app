@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Silva burger | product</title>
-    <link rel="stylesheet" href="../public/product.css" />
+    <title><% product.name %></title>
+    <link rel="stylesheet" href="/product.css" />
   </head>
   <body>
     <main>
@@ -12,16 +12,13 @@
         <a href="/cart" class="btn btn-border">add to cart</a>
         <div class="red-container">
           <div class="img-box">
-            <img src="/burger-1.jpg" alt="burger image" />
+            <img src="<%= product.image %>" alt="<%= product.name %>" />
           </div>
 
           <div class="details">
-            <h1>Burger name</h1>
+            <h1><%= product.name %></h1>
             <p class="description">
-              Id faucibus nisl tincidunt eget nullam non nisi. Amet dictum sit
-              amet justo donec enim diam vulputate ut. Non quam lacus
-              suspendisse faucibus interdum. Ac ut consequat semper viverra nam.
-              Auctor augue mauris augue neque gravida in fermentum et.
+              <%= product.description %>
               <a href="/payment" class="btn btn-red">make payment</a>
             </p>
           </div>

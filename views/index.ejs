@@ -9,37 +9,36 @@
   <body>
     <main>
       <div class="container">
-        <h1>Burger menu</h1>
+        <h1>Silva burger</h1>
         <p class="description">
           You're gonna need two hands to hold our toasted buns. Our fresh, juicy
           burgers are served up medium-well with a side of fries and a whole lot
           of flavor.
         </p>
 
+        <% if(products.length > 0){%>
         <div class="row">
+          <% products.forEach(p=>{%>
           <div class="card">
             <div class="card_details">
               <div class="card_details-box">
-                <h2>double burger</h2>
-                <p class="price">$7.5</p>
+                <h2><%= p.name %></h2>
+                <p class="price">$<%= p.price %></p>
                 <div class="btns-container">
-                  <a href="/product" class="btn btn-red">Read more</a>
+                  <a href="/product/<%= p.id %>" class="btn btn-red"
+                    >Read more</a
+                  >
                   <a href="/cart" class="btn btn-border">add to cart</a>
                 </div>
               </div>
             </div>
-            <img src="/images/burger-1.jpg" alt="burger image" />
+            <img src="<%= p.image %>" alt="<%= p.name %>" />
           </div>
-          <!-- <div class="card">
-            <img src="/images/burger-2.jpg" alt="burger image" />
-          </div>
-          <div class="card">
-            <img src="/images/burger-3.jpg" alt="burger image" />
-          </div>
-          <div class="card">
-            <img src="/images/burger-4.jpg" alt="burger image" />
-          </div> -->
+          <%}); %>
         </div>
+        <%}else{%>
+        <h1>No product to display😴</h1>
+        <%} %>
       </div>
     </main>
   </body>
