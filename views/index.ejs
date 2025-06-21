@@ -19,7 +19,7 @@
         <% if(products.length > 0){%>
         <div class="row">
           <% products.forEach(p=>{%>
-          <div class="card">
+          <article class="card">
             <div class="card_details">
               <div class="card_details-box">
                 <h2><%= p.name %></h2>
@@ -28,12 +28,15 @@
                   <a href="/product/<%= p.id %>" class="btn btn-red"
                     >Read more</a
                   >
-                  <a href="/cart" class="btn btn-border">add to cart</a>
+                  <form action="/add-to-cart" method="post">
+                    <input type="hidden" name="id" value="<%= p.id %>" />
+                    <button class="btn btn-border">add to cart</button>
+                  </form>
                 </div>
               </div>
             </div>
             <img src="<%= p.image %>" alt="<%= p.name %>" />
-          </div>
+          </article>
           <%}); %>
         </div>
         <%}else{%>

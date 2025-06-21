@@ -85,6 +85,7 @@ h2 {
   margin: 1rem 0;
 }
 
+button,
 .btn:link,
 .btn:visited {
   text-decoration: none;
@@ -121,4 +122,10 @@ h2 {
     background-color: #e52e2d;
     border: 2px solid transparent;
   }
+}
+
+form button {
+  background-color: transparent;
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
 }
