@@ -2,58 +2,28 @@ const fs = require('fs');
 const path = require('path');
 
 const express = require('express');
+const morgan = require('morgan');
 
-////////////////////////////////////
-//// EXPRESS
+const productRoutes = require('./Routes/productRoutes');
+const userRoutes = require('./Routes/userRoutes');
+
 const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
+// Middlewares
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-const prodsFromFile = JSON.parse(
-  fs.readFileSync(`${__dirname}/data/data.json`, 'utf-8')
-);
-// const cart = JSON.parse(fs.readFileSync(`${__dirname}/data/cart.json`));
-
 app.use(express.static(path.join(__dirname, 'public')));
-
-// ========= APIs ==========
-app.get('/api/v1/burgers', (req, res, next) => {
-  res.status(200).json({
-    status: 'success',
-    result: prodsFromFile.length,
-    data: {
-      burgers: prodsFromFile,
-    },
-  });
+app.use((req, res, next) => {
+  req.requestTime = new Date().toISOString();
+  next();
 });
+app.use(morgan('dev'));
 
-app.get('/api/v1/burgers/:id', (req, res) => {
-  const { id } = req.params;
-  const burger = prodsFromFile.find((p) => p.id === +id);
-  res.status(200).json({
-    status: 'success',
-    data: burger,
-  });
-});
-
-app.post('/api/v1/burgers', (req, res) => {
-  const product = req.body;
-  const id = prodsFromFile.at(-1).id + 1;
-  const newProd = Object.assign({ id }, product);
-  prodsFromFile.push(newProd);
-  fs.writeFile(
-    `${__dirname}/data/data.json`,
-    JSON.stringify(prodsFromFile),
-    (err) => {
-      console.log(err);
-    }
-  );
-  res.status(201).json({ status: 'success', data: newProd });
-});
+app.use('/api/v1/burgers', productRoutes);
+app.use('/api/v1/users', userRoutes);
 
 app.get('/', (req, res, next) => {
   const products = prodsFromFile;
